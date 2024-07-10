@@ -23,16 +23,16 @@ const SignInButton = ({
 
   const handleClick = () => {
     if (status === "authenticated") {
-      router.push(`/${params.lang}${config.auth.callbackUrl}`);
+      router.push(`/${config.auth.callbackUrl}`);
     } else {
-      signIn(undefined, { callbackUrl: `/${params.lang}${config.auth.callbackUrl}` });
+      signIn(undefined, { callbackUrl: `/${config.auth.callbackUrl}` });
     }
   };
 
   if (status === "authenticated") {
     return (
       <Link
-        href={`/${params.lang}${config.auth.callbackUrl}`}
+        href={`/${config.auth.callbackUrl}`}
         className={`bg-white rounded-xl flex items-center  ${extraStyle ? extraStyle : ""}`}
       >
         {`Dashboard `}
@@ -42,13 +42,13 @@ const SignInButton = ({
   }
 
   return (
-    <button
+    <Link
       className={`bg-white rounded-xl flex items-center ${extraStyle ? extraStyle : ""}`}
-      onClick={handleClick}
+      href={`/login`}
     >
       {`Sign In `}
       <ChevronRight size={16} />
-    </button>
+    </Link>
   );
 };
 

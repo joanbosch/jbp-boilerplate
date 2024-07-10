@@ -108,6 +108,7 @@ const config = {
     callbackUrl: "/",
   },
   i18n: {
+    // REQUIRED - the default locale page
     defaultLocale: "en",
   }
 } as ConfigProps;
