@@ -21,14 +21,6 @@ const SignInButton = ({
   const params = useParams();
   const { data: session, status } = useSession();
 
-  const handleClick = () => {
-    if (status === "authenticated") {
-      router.push(`/${config.auth.callbackUrl}`);
-    } else {
-      signIn(undefined, { callbackUrl: `/${config.auth.callbackUrl}` });
-    }
-  };
-
   if (status === "authenticated") {
     return (
       <Link
@@ -44,7 +36,7 @@ const SignInButton = ({
   return (
     <Link
       className={`bg-white rounded-xl flex items-center ${extraStyle ? extraStyle : ""}`}
-      href={`/login`}
+      href={config.auth.loginUrl}
     >
       {`Sign In `}
       <ChevronRight size={16} />

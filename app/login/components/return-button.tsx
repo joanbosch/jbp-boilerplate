@@ -23,7 +23,7 @@ export default function ReturnButton() {
         "absolute lg:hidden left-0 top-4 flex flex-row gap-2 items-center justify-center m-2"
       )}
     >
-      <ChevronLeft className="h-6 w-6" />
+      <ChevronLeft size={16} />
       {config.appName}
     </Link>
   )
