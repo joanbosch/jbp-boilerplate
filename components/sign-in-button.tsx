@@ -17,9 +17,7 @@ const SignInButton = ({
   text?: string;
   extraStyle?: string;
 }) => {
-  const router = useRouter();
-  const params = useParams();
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   if (status === "authenticated") {
     return (
