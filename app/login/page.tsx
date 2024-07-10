@@ -1,8 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { buttonVariants } from "@/components/ui/button"
 import { UserAuthForm } from "./user-auth-form"
-import { cn } from "@/lib/utils"
 import config from "@/config"
 
 export default function AuthenticationPage() {
@@ -47,7 +45,7 @@ export default function AuthenticationPage() {
               <p className="text-lg">
                 {`"${config.appDescription}"`}
               </p>
-              <footer className="text-sm">{config.ownerName}</footer>
+              <footer className="text-sm">{config.owner.name}</footer>
             </blockquote>
           </div>
         </div>

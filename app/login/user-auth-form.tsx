@@ -9,6 +9,8 @@ import { Label } from "@/components/ui/label"
 import { Loader } from "lucide-react"
 import { Icons } from "@/components/icons"
 
+import { signIn, auth, providerMap } from "@/lib/auth"
+
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {

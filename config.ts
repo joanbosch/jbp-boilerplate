@@ -6,10 +6,15 @@ const config = {
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Unlock new markets in seconds with Quicklang",
+  // REQUIRED: SEO applicaton category type
+  applicationCategory: "DeveloperApplication",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "quicklang.app",
   // optional
-  ownerName: "Joan Bosch",
+  ownerInfo: {
+    ownerName: "Joan Bosch",
+    twitterName: "@joanboschpons",
+  },
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "b1216b9c-9259-49ae-a1cc-b5c074228fdf",
@@ -101,6 +106,9 @@ const config = {
     loginUrl: "/login",
     // REQUIRED — the path you want to redirect users after successfull login (i.e. /dashboard, /private). This is normally a private page for users to manage their accounts. It's used in apiClient (/libs/api.js) upon 401 errors from our API & in ButtonSignin.js
     callbackUrl: "/",
+  },
+  i18n: {
+    defaultLocale: "en",
   }
 } as ConfigProps;
 

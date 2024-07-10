@@ -5,6 +5,7 @@ import { Inter as FontSans } from "next/font/google"
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import GlobalProvider from "@/components/providers/global-provider";
+import config from "@/config";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang={config.i18n.defaultLocale}>
       <body className={cn("min-h-screen bg-background font-sans antialiased",fontSans.variable)}>
         <GlobalProvider>
           {children}

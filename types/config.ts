@@ -1,8 +1,36 @@
+type ApplicationCategory =
+ | "GameApplication"
+ | "SocialNetworkingApplication"
+ | "TravelApplication"
+ | "ShoppingApplication"
+ | "SportsApplication"
+ | "LifestyleApplication"
+ | "BusinessApplication"
+ | "DesignApplication"
+ | "DeveloperApplication"
+ | "DriverApplication"
+ | "EducationalApplication"
+ | "HealthApplication"
+ | "FinanceApplication"
+ | "SecurityApplication"
+ | "BrowserApplication"
+ | "CommunicationApplication"
+ | "DesktopEnhancementApplication"
+ | "EntertainmentApplication"
+ | "MultimediaApplication"
+ | "HomeApplication"
+ | "UtilitiesApplication"
+ | "ReferenceApplication"
+
 export interface ConfigProps {
   appName: string;
   appDescription: string;
   domainName: string;
-  ownerName?: string;
+  applicationCategory: ApplicationCategory;
+  ownerInfo: {
+    ownerName: string;
+    twitterName: string;
+  }
   crisp: {
     id?: string;
     onlyShowOnRoutes?: string[];
@@ -39,8 +67,8 @@ export interface ConfigProps {
     loginUrl: string;
     callbackUrl: string;
   };
-  i18n?: {
+  i18n: {
     defaultLocale: string;
-    locales: string[];
+    locales?: string[];
   };
 }
