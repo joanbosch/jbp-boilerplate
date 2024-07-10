@@ -4,10 +4,11 @@ import { ReactNode, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { Crisp } from "crisp-sdk-web";
+import { Toaster } from "@/components/ui/sonner"
 import { SessionProvider } from "next-auth/react";
-import { Tooltip } from "react-tooltip";
 import config from "@/config";
-import { ModalProvider } from "./providers/modal-provider";
+import { ModalProvider } from "@/components/providers/modal-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 
 // Crisp customer chat support:
 // This component is separated from ClientLayout because it needs to be wrapped with <SessionProvider> to use useSession() hook
@@ -50,23 +51,31 @@ const CrispChat = (): null => {
 // 3. Toaster: Show Success/Error messages anywhere from the app with toast()
 // 4. Tooltip: Show tooltips if any JSX elements has these 2 attributes: data-tooltip-id="tooltip" data-tooltip-content=""
 // 5. CrispChat: Set Crisp customer chat support (see above)
-const ClientLayout = ({ children, dictionary }: { children: ReactNode, dictionary: any }) => {
+const GlobalProvider = ({ children, dictionary={} }: { children: ReactNode, dictionary?: any }) => {
   return (
     <>
       <SessionProvider>
-        {/* Show a progress bar at the top when navigating between pages */}
-        <ModalProvider />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {/* Show a progress bar at the top when navigating between pages */}
+          <ModalProvider />
 
-        {/* Content inside app/page.js files  */}
-        {children}
+          {/* Content inside app/page.js files  */}
+          {children}
 
-        {/* Set Crisp customer chat support */}
-        <CrispChat />
+          {/* Set Crisp customer chat support */}
+          <CrispChat />
 
-        {/* Show toasts anywhere from the app from Shadcn/ui Sonner*/}
+          {/* Show toasts anywhere from the app from Shadcn/ui Sonner*/}
+          <Toaster position="top-center" expand={false} richColors duration={3000} />
+        </ThemeProvider>
       </SessionProvider>
     </>
   );
 };
 
-export default ClientLayout;
+export default GlobalProvider;
