@@ -8,6 +8,8 @@ const config = {
     "Unlock new markets in seconds with Quicklang",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "quicklang.app",
+  // optional
+  ownerName: "Joan Bosch",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "b1216b9c-9259-49ae-a1cc-b5c074228fdf",
@@ -96,9 +98,9 @@ const config = {
   },
   auth: {
     // REQUIRED — the path to log in users. It's use to protect private routes (like /dashboard). It's used in apiClient (/libs/api.js) upon 401 errors from our API
-    loginUrl: "/api/auth/signin",
+    loginUrl: "/login",
     // REQUIRED — the path you want to redirect users after successfull login (i.e. /dashboard, /private). This is normally a private page for users to manage their accounts. It's used in apiClient (/libs/api.js) upon 401 errors from our API & in ButtonSignin.js
-    callbackUrl: "/projects",
+    callbackUrl: "/",
   }
 } as ConfigProps;
 
