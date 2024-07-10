@@ -112,6 +112,8 @@ const config = {
   i18n: {
     // REQUIRED - the default locale page
     defaultLocale: "en",
+    // REQUIRED - true to use localized pathnames, false otherwise
+    pathLocalized: false
   }
 } as ConfigProps;
 

@@ -71,6 +71,7 @@ export interface ConfigProps {
   };
   i18n: {
     defaultLocale: string;
+    pathLocalized: boolean;
     locales?: string[];
   };
 }

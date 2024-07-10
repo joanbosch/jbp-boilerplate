@@ -24,7 +24,6 @@ import { Crisp } from "crisp-sdk-web";
 export default function UserButton() {
 
   const { data: session, status } = useSession();
-  console.log(session)
   const router = useRouter()
 
   useEffect(() => {
