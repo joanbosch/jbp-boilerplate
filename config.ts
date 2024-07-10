@@ -2,7 +2,7 @@ import { ConfigProps } from "@/types/config";
 
 const config = {
   // REQUIRED
-  appName: "Quicklang",
+  appName: "MenorcaInfo",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Unlock new markets in seconds with Quicklang",
@@ -28,7 +28,7 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
+            ? "price_456"
             : "price_456",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         free: true,
@@ -53,8 +53,8 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1PYQt1JE4s9QgQ0iHmVK4ewE"
-            : "price_1PYmIcJE4s9QgQ0i5ygvQYkH",
+            ? "price_456"
+            : "price_456",
         //  REQUIRED - Name of the plan, displayed on the pricing page
         name: "pro",
         isFeatured: true,
@@ -78,14 +78,13 @@ const config = {
     ],
     products: [
       {
-         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
-         priceId:
-         process.env.NODE_ENV === "development"
-           ? "price_1PYR0hJE4s9QgQ0i037eucjQ"
-           : "price_1PYmIeJE4s9QgQ0il343ANwN",
+        // REQUIRED — we use this to find the product in the webhook (for instance if you want to update the user's credits based on the plan)
+        priceId:
+        process.env.NODE_ENV === "development"
+          ? "price_456"
+          : "price_456",
         name: "1k Credits",
         price: 10,
-        creditCount: 1000000,
       }
     ]
   },
