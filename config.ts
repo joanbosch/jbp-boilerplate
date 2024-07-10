@@ -2,14 +2,14 @@ import { ConfigProps } from "@/types/config";
 
 const config = {
   // REQUIRED
-  appName: "MenorcaInfo",
+  appName: "JBoilerPlate",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Unlock new markets in seconds with Quicklang",
+    "Make SaaS like a pro with JBoilerPlate. A boilerplate for SaaS applications with Next.js, Tailwind CSS, and Stripe.",
   // REQUIRED: SEO applicaton category type
   applicationCategory: "DeveloperApplication",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "quicklang.app",
+  domainName: "jboilerpla.te",
   // optional
   ownerInfo: {
     ownerName: "Joan Bosch",
