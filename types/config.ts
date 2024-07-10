@@ -30,6 +30,8 @@ export interface ConfigProps {
   ownerInfo: {
     ownerName: string;
     twitterName: string;
+    twitterLink: string;
+    githubLink: string;
   }
   crisp: {
     id?: string;

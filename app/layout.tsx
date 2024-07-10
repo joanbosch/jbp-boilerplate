@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={config.i18n.defaultLocale}>
+    <html lang={config.i18n.defaultLocale} suppressHydrationWarning>
       {config.domainName && (
         <head>
           <PlausibleProvider domain={config.domainName} />

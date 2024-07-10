@@ -65,7 +65,11 @@ const GlobalProvider = ({ children, dictionary={} }: { children: ReactNode, dict
           <ModalProvider />
 
           {/* Content inside app/page.js files  */}
-          {children}
+          <div vaul-drawer-wrapper="">
+            <div className="relative flex min-h-screen flex-col bg-background">
+              {children}
+            </div>
+          </div>
 
           {/* Set Crisp customer chat support */}
           <CrispChat />
