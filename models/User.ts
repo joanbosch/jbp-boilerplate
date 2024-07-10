@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import toJSON from "./plugins/toJson";
+import toJSON from "./plugins/toJSON";
 
 // USER SCHEMA
 const userSchema = new mongoose.Schema(

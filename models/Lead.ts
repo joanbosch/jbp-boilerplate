@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import toJSON from "./plugins/toJson";
+import toJSON from "./plugins/toJSON";
 
 // LEAD SCHEMA is used to store the leads that are generated from the landing page.
 // You would use this if your product isn't ready yet and you want to collect emails

@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Moon, MoonIcon, Sun, SunIcon } from "lucide-react"
+import { MoonIcon, SunIcon } from "lucide-react"
 import { useTheme } from "next-themes"
 
 import { Button } from "@/components/ui/button"
@@ -14,7 +14,6 @@ import {
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
-  let id: any = null
 
   return (
     <DropdownMenu>

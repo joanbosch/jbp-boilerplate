@@ -1,9 +1,12 @@
+export const dynamic = 'force-dynamic'
+
 import Link from "next/link"
 import { UserAuthForm } from "./user-auth-form"
 import config from "@/config"
 import { getSEOTags } from "@/lib/seo";
 import ReturnButton from "./components/return-button";
 import ReturnAppName from "./components/return-app-name";
+import { Suspense } from "react";
 
 export const metadata = getSEOTags({
   title: `Login | ${config.appName}`,
@@ -37,7 +40,9 @@ export default function AuthenticationPage() {
                 Enter your email below to create or login into your account
               </p>
             </div>
-            <UserAuthForm />
+            <Suspense fallback={"Loading..."}>
+              <UserAuthForm />
+            </Suspense>
             <p className="px-8 text-center text-sm text-muted-foreground">
               By clicking continue, you agree to our{" "}
               <Link
