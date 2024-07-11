@@ -89,17 +89,17 @@ export const authors: authorType[] = [
     socials: [
       {
         name: "X",
-        icon: Icons.twitter({}),
+        icon: <Icons.twitter className="h-6 w-6" />,
         url: "https://twitter.com/joanboschpons",
       },
       {
         name: "LinkedIn",
-        icon: Icons.linkedin({}),
+        icon: <Icons.linkedin className="h-6 w-6" />,
         url: "https://www.linkedin.com/in/joanboschpons/",
       },
       {
         name: "GitHub",
-        icon: Icons.gitHub({}),
+        icon: <Icons.gitHub className="h-6 w-6" />,
         url: "https://github.com/joanbosch",
       },
     ],
@@ -118,7 +118,7 @@ export type articleType = {
   author: authorType;
   publishedAt: string;
   image: {
-    src?: StaticImageData | string;
+    src?: string;
     urlRelative: string;
     alt: string;
   };
@@ -159,6 +159,7 @@ export const articles: articleType[] = [
     // An array of categories of the article. It's used to generate the category badges, the category filter, and more.
     categories: [
       categories.find((category) => category.slug === categorySlugs.feature) as categoryType,
+      categories.find((category) => category.slug === categorySlugs.tutorial) as categoryType,
     ],
     // The author of the article. It's used to generate a link to the author's bio page.
     author: authors.find((author) => author.slug === authorSlugs.joan) as authorType,

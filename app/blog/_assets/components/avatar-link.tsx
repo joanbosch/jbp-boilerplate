@@ -13,7 +13,7 @@ const AvatarLink = ({ article }: { article: articleType }) => {
     <Link
       href={`/blog/author/${article.author.slug}`}
       title={`Posts by ${article.author.name}`}
-      className="inline-flex items-center gap-2 group"
+      className="inline-flex items-center gap-2 group/avatar"
       rel="author"
     >
       <span itemProp="author">
@@ -22,7 +22,7 @@ const AvatarLink = ({ article }: { article: articleType }) => {
           <AvatarFallback>{article.author.name.charAt(0)}</AvatarFallback>
         </Avatar>
       </span>
-      <span className="group-hover:underline">{article.author.name}</span>
+      <span className="group-hover/avatar:underline">{article.author.name}</span>
     </Link>
   );
 };
