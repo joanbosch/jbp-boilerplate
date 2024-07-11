@@ -2,6 +2,15 @@ import Link from "next/link";
 import ButtonSupport from "@/components/support-button";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { getSEOTags } from "@/lib/seo";
+
+
+export const metadata = getSEOTags({
+  title: `404 not found`,
+  description:
+    "",
+  canonicalUrlRelative: "/blog",
+});
 
 // Simple 404 page with a button to go home and a button to contact support
 // Show a cute SVG with your primary color

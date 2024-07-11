@@ -1,6 +1,8 @@
 import dynamic from 'next/dynamic'
 import { notFound } from "next/navigation"
+
 import "@/styles/mdx.css"
+
 import { docsConfig } from '@/config/docs'
 import { getSEOTags } from '@/lib/seo'
 import config from '@/config/config'
@@ -69,7 +71,9 @@ export default async function Docs({ params }: DocPageProps) {
           </p>
         )}
       </div>
-      <DocComponent />
+      <div className={`pb-12 pt-8`}>
+        <DocComponent />
+      </div>
     </div>
     {doc.toc && (
       <div className="hidden text-sm xl:block">

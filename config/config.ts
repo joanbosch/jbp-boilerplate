@@ -2,7 +2,7 @@ import { ConfigProps } from "@/types/config";
 
 const config = {
   // REQUIRED
-  appName: "Gridwow",
+  appName: "gridwow",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
     "Beautiful customer satisfaction grids at your service",
