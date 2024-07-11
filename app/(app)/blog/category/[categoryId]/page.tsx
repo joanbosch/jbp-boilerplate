@@ -2,7 +2,7 @@ import { categories, articles, categoryType } from "../../_assets/content";
 import CardArticle from "../../_assets/components/card-article";
 import CardCategory from "../../_assets/components/card-category";
 import { getSEOTags } from "@/lib/seo";
-import config from "@/config";
+import config from "@/config/config";
 
 export async function generateMetadata({
   params,

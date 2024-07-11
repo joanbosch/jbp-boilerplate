@@ -2,7 +2,7 @@ import Image from "next/image";
 import { authors, articles, authorType } from "../../_assets/content";
 import CardArticle from "../../_assets/components/card-article";
 import { getSEOTags } from "@/lib/seo";
-import config from "@/config";
+import config from "@/config/config";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 

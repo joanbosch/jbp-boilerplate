@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import config from "@/config";
+import config from "@/config/config";
 
 // These are all the SEO tags you can add to your pages.
 // It prefills data with default title/description/OG, etc.. and you can cusotmize it for each page.

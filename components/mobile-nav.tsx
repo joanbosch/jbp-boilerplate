@@ -9,7 +9,7 @@ import { Icons } from "@/components/icons"
 import { Sheet, SheetContent, SheetTrigger } from "./ui/sheet"
 import { Button } from "./ui/button"
 import { ScrollArea } from "./ui/scroll-area"
-import config from "@/config"
+import config from "@/config/config";
 import { Menu } from "lucide-react"
 
 export function MobileNav() {

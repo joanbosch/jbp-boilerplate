@@ -6,7 +6,7 @@ import GoogleProvider from "next-auth/providers/google";
 import Nodemailer from "next-auth/providers/nodemailer"
 
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
-import config from "@/config";
+import config from "@/config/config";
 import connectMongo from "@/lib/mongo";
 
 interface NextAuthOptionsExtended extends NextAuthConfig {

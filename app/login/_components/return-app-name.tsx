@@ -1,7 +1,7 @@
 "use client"
 
 import { Icons } from "@/components/icons"
-import config from "@/config"
+import config from "@/config/config";
 import Link from "next/link"
 import { useSearchParams } from "next/navigation"
 import { useMemo } from "react"

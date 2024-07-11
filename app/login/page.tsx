@@ -2,7 +2,7 @@ export const dynamic = 'force-dynamic'
 
 import Link from "next/link"
 import { UserAuthForm } from "./user-auth-form"
-import config from "@/config"
+import config from "@/config/config";
 import { getSEOTags } from "@/lib/seo";
 import ReturnButton from "./_components/return-button";
 import ReturnAppName from "./_components/return-app-name";

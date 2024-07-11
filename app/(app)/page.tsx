@@ -5,7 +5,7 @@ import {
   PageHeaderHeading,
 } from "@/components/page-header"
 import { Button } from "@/components/ui/button";
-import config from "@/config";
+import config from "@/config/config";
 
 export default function Home() {
   return (

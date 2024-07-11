@@ -1,7 +1,7 @@
 "use client";
 
-import config from "@/config";
-import { ChevronRight, Cloud, CreditCard, LifeBuoy, LogOut, Settings, User } from "lucide-react";
+import config from "@/config/config";
+import { Cloud, CreditCard, LifeBuoy, LogOut, Settings, User } from "lucide-react";
 import { signOut, useSession } from "next-auth/react"
 import Link from "next/link";
 import { buttonVariants } from "./ui/button";

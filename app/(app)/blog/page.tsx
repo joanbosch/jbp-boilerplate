@@ -1,8 +1,8 @@
 import { categories, articles } from "./_assets/content";
 import CardArticle from "./_assets/components/card-article";
 import CardCategory from "./_assets/components/card-category";
-import config from "@/config";
 import { getSEOTags } from "@/lib/seo";
+import config from "@/config/config";
 
 export const metadata = getSEOTags({
   title: `${config.appName} Blog | Awesome embeeded grid components`,

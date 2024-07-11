@@ -1,7 +1,7 @@
 "use client"
 
 import { buttonVariants } from '@/components/ui/button'
-import config from '@/config'
+import config from "@/config/config";
 import { cn } from '@/lib/utils'
 import { ChevronLeft } from 'lucide-react'
 import Link from 'next/link'

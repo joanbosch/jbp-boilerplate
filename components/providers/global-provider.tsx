@@ -6,7 +6,7 @@ import { useSession } from "next-auth/react";
 import { Crisp } from "crisp-sdk-web";
 import { Toaster } from "@/components/ui/sonner"
 import { SessionProvider } from "next-auth/react";
-import config from "@/config";
+import config from "@/config/config";
 import { ModalProvider } from "@/components/providers/modal-provider";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 

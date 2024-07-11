@@ -1,6 +1,6 @@
 import axios from "axios";
 import { signIn } from "next-auth/react";
-import config from "@/config";
+import config from "@/config/config";
 import { toast } from "sonner";
 
 // use this to interact with our own API (/app/api folder) from the front-end side

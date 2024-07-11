@@ -1,4 +1,4 @@
-import config from "@/config";
+import config from "@/config/config";
 import { absoluteUrl } from "@/lib/utils";
 
 export default async function sitemap() {

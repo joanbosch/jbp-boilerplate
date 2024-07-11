@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import { headers } from "next/headers";
 import Stripe from "stripe";
 import connectMongo from "@/lib/mongoose";
-import configFile from "@/config";
+import config from "@/config/config";
 import User from "@/models/User";
 import { findCheckoutSession } from "@/lib/stripe";
 
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
         const customerId = session?.customer;
         const priceId = session?.line_items?.data[0]?.price!.id;
         const userId = stripeObject.client_reference_id;
-        const plan = configFile.stripe.plans.find((p) => p.priceId === priceId);
+        const plan = config.stripe.plans.find((p) => p.priceId === priceId);
 
         if (!plan) break;
 

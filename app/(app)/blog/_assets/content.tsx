@@ -1,7 +1,7 @@
 import type { JSX } from "react";
 import Image, { StaticImageData } from "next/image";
 import { Icons } from "@/components/icons";
-import config from "@/config";
+import config from "@/config/config";
 
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️

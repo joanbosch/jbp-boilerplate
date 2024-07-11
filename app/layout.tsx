@@ -5,7 +5,7 @@ import { Inter as FontSans } from "next/font/google"
 import GlobalProvider from "@/components/providers/global-provider";
 import PlausibleProvider from 'next-plausible'
 
-import config from "@/config";
+import config from "@/config/config";
 import { getSEOTags } from "@/lib/seo";
 
 const fontSans = FontSans({

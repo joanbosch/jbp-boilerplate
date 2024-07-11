@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input"
 import { Loader } from "lucide-react"
 import { signIn } from 'next-auth/react';
 import { useSearchParams } from "next/navigation"
-import config from "@/config"
+import config from "@/config/config";
 
 import { z } from "zod"
 import { useForm } from "react-hook-form"

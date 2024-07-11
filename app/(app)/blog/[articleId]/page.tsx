@@ -4,7 +4,7 @@ import { articles, articleType } from "../_assets/content";
 import BadgeCategory from "../_assets/components/badge-category";
 import Avatar from "../_assets/components/avatar-link";
 import { getSEOTags } from "@/lib/seo";
-import config from "@/config";
+import config from "@/config/config";
 
 export async function generateMetadata({
   params,

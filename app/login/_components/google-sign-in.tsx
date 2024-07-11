@@ -2,7 +2,7 @@
 
 import { Icons } from '@/components/icons'
 import { Button } from '@/components/ui/button'
-import config from '@/config';
+import config from "@/config/config";
 import { Loader } from 'lucide-react'
 import { useSearchParams } from 'next/navigation'
 import React, { useState } from 'react'

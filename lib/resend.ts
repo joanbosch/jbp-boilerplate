@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import config from '@/config';
+import config from "@/config/config";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
