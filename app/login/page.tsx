@@ -4,8 +4,8 @@ import Link from "next/link"
 import { UserAuthForm } from "./user-auth-form"
 import config from "@/config"
 import { getSEOTags } from "@/lib/seo";
-import ReturnButton from "./components/return-button";
-import ReturnAppName from "./components/return-app-name";
+import ReturnButton from "./_components/return-button";
+import ReturnAppName from "./_components/return-app-name";
 import { Suspense } from "react";
 
 export const metadata = getSEOTags({

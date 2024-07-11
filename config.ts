@@ -2,10 +2,10 @@ import { ConfigProps } from "@/types/config";
 
 const config = {
   // REQUIRED
-  appName: "JBoilerPlate",
+  appName: "Gridwow",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Make SaaS like a pro with JBoilerPlate. A boilerplate for SaaS applications with Next.js, Tailwind CSS, and Stripe.",
+    "Beautiful customer satisfaction grids at your service",
   // REQUIRED: SEO applicaton category type
   applicationCategory: "DeveloperApplication",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)

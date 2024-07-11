@@ -2,8 +2,8 @@
 
 import * as React from "react"
 import { cn } from "@/lib/utils"
-import NodemailerSignIn from "./components/nodemailer-sign-in"
-import GoogleSignIn from "./components/google-sign-in"
+import NodemailerSignIn from "./_components/nodemailer-sign-in"
+import GoogleSignIn from "./_components/google-sign-in"
 
 interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 

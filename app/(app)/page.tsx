@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <main className="flex-1">
         <PageHeader className="items-center px-20">
-          <PageHeaderHeading className="text-6xl md:text-8xl">{config.appName}</PageHeaderHeading>
+          <PageHeaderHeading className="text-6xl md:text-8xl tracking-normal">{config.appName}</PageHeaderHeading>
           <PageHeaderDescription className="text-center">
             {config.appDescription}
           </PageHeaderDescription>
