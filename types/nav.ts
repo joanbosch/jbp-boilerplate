@@ -10,13 +10,14 @@ export interface NavItem {
   label?: string
 }
 
-export interface NavItemSection {
+export interface NavTocItem {
   title: string
   id: string
+  items?: NavTocItem[]
 }
 
 export interface NavItemWithChildren extends NavItem {
-  sections?: NavItemSection[]
+  toc?: NavTocItem[]
   items: NavItemWithChildren[]
 }
 

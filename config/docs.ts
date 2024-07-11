@@ -46,8 +46,13 @@ export const docsConfig: DocsConfig = {
           description: "Get started with Gridwow",
           href: "/docs",
           items: [],
-          sections: [
-            { title: "Introduction", id: "introduction" }
+          toc: [
+            { title: "One", id: "one", items: [
+              { title: "One-One", id: "one-one"}
+            ]},
+            { title: "Two", id: "two" },
+            { title: "Three", id: "three" },
+            { title: "Four", id: "four" }
           ]
         },
         {
