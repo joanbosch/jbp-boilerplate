@@ -138,7 +138,7 @@ const styles: {
   ul: "my-6 ml-6 list-disc [&>li]:mt-2",
   // li: "list-item",
   // Altnernatively, you can use the library react-syntax-highlighter to display code snippets.
-  code: "text-sm font-mono bg-black text-neutral-content p-6 rounded-box my-4 overflow-x-scroll select-all",
+  code: "text-sm font-mono bg-black rounded-md p-6 text-gray-200",
   codeInline: "relative rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold",
   lead: "text-xl text-muted-foreground",
   large: "text-lg font-semibold",

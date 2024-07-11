@@ -52,7 +52,7 @@ const CardArticle = ({
               </figure>
             </CardHeader>
           )}
-          <CardContent className="flex flex-col gap-2">
+          <CardContent className="flex flex-col gap-2 pt-2">
             {/* CATEGORIES */}
             {showCategory && (
               <div className="flex flex-wrap gap-2 py-2">
