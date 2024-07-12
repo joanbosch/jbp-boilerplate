@@ -82,7 +82,7 @@ function MarqueeLayout({
   return (
     <div
       className={cn(
-        `flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row w-full`,
+        `flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row w-full h-full items-center`,
         scrollDirection === "default" && "[animation-direction:reverse]",
         stopOnHover && "group-hover/marquee:[animation-play-state:paused]",
         orientation === "vertical" ? "flex-col animate-marquee-y" : "flex-row animate-marquee",
