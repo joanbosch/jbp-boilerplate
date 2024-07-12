@@ -72,11 +72,16 @@ const config = {
           "0%": { transform: "translateX(0)" },
           "100%": { transform: "translateX(calc(-100% - var(--gap)))" },
         },
+        "marquee-y" : {
+          "0%": { transform: "translateY(0)" },
+          "100%": { transform: "translateY(calc(-100% - var(--gap)))" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "marquee": "marquee var(--duration) linear infinite",
+        "marquee-y": "marquee-y var(--duration) linear infinite",
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...fontFamily.sans],

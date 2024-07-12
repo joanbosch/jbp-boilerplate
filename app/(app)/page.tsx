@@ -15,10 +15,11 @@ import {
 } from "@/components/ui/card"
 import { AwesomeCard, AwesomeCardAction, AwesomeCardContent, AwesomeCardDescription, AwesomeCardFooter, AwesomeCardIcon, AwesomeCardImage, AwesomeCardText, AwesomeCardTitle } from "@/components/grid-components/awesome-card";
 import config from "@/config/config";
-import { Activity, ArrowRight, Layout, LayoutPanelLeft } from "lucide-react";
+import { Activity, ArrowRight, Atom, Bird, Layout, LayoutPanelLeft } from "lucide-react";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import { Marquee } from "@/components/grid-components/marquee";
+import MarqueeItem from "@/components/marquee-item";
 
 export default function Home() {
   return (
@@ -62,12 +63,30 @@ export default function Home() {
           </AwesomeCardAction>
         </AwesomeCard>
       </section>
-      <section>
-      <Marquee duration={2} className="w-56">
-        <div className={`flex items-center content-center justify-center p-2 rounded-xl bg-muted`}>
-          <Activity className="w-6 h-6" />
+      <section className={`container`}>
+        <div className="overflow-hidden border rounded-xl shadow-xl flex flex-col w-fit h-fit">
+          <Marquee duration={10} className="w-96" scrollDirection="reversed" stopOnHover >
+            <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+            <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+            <MarqueeItem icon={Icons.apple} className="bg-orange-200 border w-16" />
+            <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+            <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+          </Marquee>
+          <Marquee duration={15} className="w-96" >
+            <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+            <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+            <MarqueeItem icon={Icons.apple} className="bg-orange-200 border w-16" />
+            <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+            <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+          </Marquee>
+          <Marquee duration={16} className="w-96" >
+            <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+            <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+            <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+            <MarqueeItem icon={Icons.apple} className="bg-orange-200 border w-16" />
+            <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+          </Marquee>
         </div>
-      </Marquee>
       </section>
     </main>
   );
