@@ -15,9 +15,10 @@ import {
 } from "@/components/ui/card"
 import { AwesomeCard, AwesomeCardAction, AwesomeCardContent, AwesomeCardDescription, AwesomeCardFooter, AwesomeCardIcon, AwesomeCardImage, AwesomeCardText, AwesomeCardTitle } from "@/components/grid-components/awesome-card";
 import config from "@/config/config";
-import { ArrowRight, Layout, LayoutPanelLeft } from "lucide-react";
+import { Activity, ArrowRight, Layout, LayoutPanelLeft } from "lucide-react";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
+import { Marquee } from "@/components/grid-components/marquee";
 
 export default function Home() {
   return (
@@ -32,8 +33,8 @@ export default function Home() {
           <Button>Get now</Button>
         </PageActions>
       </PageHeader>
-      <section className="grid w-full auto-rows-[22rem] grid-cols-4 gap-4 max-w-[80rem] px-8 mx-auto mb-40">
-        <AwesomeCard className="col-span-2">
+      <section className="grid w-full auto-rows-[22rem] gap-4 max-w-[80rem] px-8 mx-auto mb-40">
+        <AwesomeCard>
           <AwesomeCardContent>
             <AwesomeCardImage
               src="https://pbs.twimg.com/profile_banners/1761393513562824704/1709550727/600x200"
@@ -61,81 +62,12 @@ export default function Home() {
           </AwesomeCardAction>
         </AwesomeCard>
       </section>
-      <section className="container relative cursor-default h-full w-full lg:max-w-[24rem] transform-gpu rounded-lg border bg-background lg:max-h-[500px]">
-        <div className={`flex h-full w-full cursor-pointer flex-col items-start justify-between`}>
-          <div className={`group relative flex h-[300px] w-full cursor-pointer flex-col items-center justify-center gap-y-1 overflow-hidden rounded-t-xl p-4`}>
-            <div className={`relative flex flex-col items-center justify-center gap-y-2 px-10`}>
-              <div className={`group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row -delay-[200ms] [--duration:20s]`}>
-                <>
-                {Array.from({ length: 5 }).map((_, index) => {
-                  <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
-                    <>
-                    {
-                      Array.from({ length: 5 }).map((_, index) => {
-                        <div className={`relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4  transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]`}>
-                          HOLA
-                        </div>
-                      })
-                    }
-                    </>
-                  </div>
-                })}
-                </>
-              </div>
-              <div className={`group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:30s]`}>
-              <>
-                {Array.from({ length: 5 }).map((_, index) => {
-                  <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
-                    <>
-                    {
-                      Array.from({ length: 5 }).map((_, index) => {
-                        <div className={`relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4  transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]`}>
-                          HOLA
-                        </div>
-                      })
-                    }
-                    </>
-                  </div>
-                })}
-                </>
-              </div>
-              <div className={`group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row -delay-[200ms] [--duration:20s]`}>
-              <>
-                {Array.from({ length: 5 }).map((_, index) => {
-                  <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
-                    <>
-                    {
-                      Array.from({ length: 5 }).map((_, index) => {
-                        <div className={`relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4  transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]`}>
-                          HOLA
-                        </div>
-                      })
-                    }
-                    </>
-                  </div>
-                })}
-                </>
-              </div>
-              <div className={`group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:30s]`}>
-              <>
-                {Array.from({ length: 5 }).map((_, index) => {
-                  <div className="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row [animation-direction:reverse]">
-                    <>
-                    {
-                      Array.from({ length: 5 }).map((_, index) => {
-                        <div className={`relative size-20 cursor-pointer overflow-hidden rounded-2xl border p-4  transform-gpu dark:bg-transparent dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset]`}>
-                          HOLA
-                        </div>
-                      })
-                    }
-                    </>
-                  </div>
-                })}
-                </>
-              </div>
-            </div>
-          </div>
+      <section>
+      <Marquee duration={2} className="w-56">
+        <div className={`flex items-center content-center justify-center p-2 rounded-xl bg-muted`}>
+          <Activity className="w-6 h-6" />
         </div>
+      </Marquee>
       </section>
     </main>
   );
