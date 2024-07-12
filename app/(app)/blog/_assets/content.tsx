@@ -143,7 +143,7 @@ const styles: {
   lead: "text-xl text-muted-foreground",
   large: "text-lg font-semibold",
   small: "text-sm font-medium leading-none",
-  muted: "text-sm text-muted-foreground"
+  muted: "ca"
 };
 
 // All the blog articles data display in the /blog/[articleId].js pages.
