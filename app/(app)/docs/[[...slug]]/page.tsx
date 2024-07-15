@@ -1,15 +1,20 @@
 import dynamic from 'next/dynamic'
 import { notFound } from "next/navigation"
+import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
 
 import { docsConfig } from '@/config/docs'
 import { getSEOTags } from '@/lib/seo'
+
 import config from '@/config/config'
 import { cn } from '@/lib/utils'
+
 import { ChevronRightIcon } from 'lucide-react'
+
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { DashboardTableOfContents } from '@/components/toc'
+
 import { Balancer } from '@/components/grid-components/balancer'
 
 interface DocPageProps {
@@ -19,16 +24,14 @@ interface DocPageProps {
 }
 
 async function getDocFromParams({ params }: DocPageProps) {
-  const slug = `/docs${params.slug?.join("/") ? `/${params.slug?.join("/")}` : ""}`;
-  console.log(slug)
-  const sections = docsConfig.sidebarNav;
-  for (const section of sections) {
-    const doc = section.items.find((doc) => doc.href === slug);
-    if (doc) {
-      return doc;
-    }
+  const slug = params.slug?.join("/") || ""
+  const doc = allDocs.find((doc: any) => doc.slugAsParams === slug)
+
+  if (!doc) {
+    return null
   }
-  return null;
+
+  return doc
 }
 
 export async function generateMetadata({
