@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils"
 
 
 interface MarqueeProps extends React.HTMLAttributes<HTMLDivElement> {
-  duration?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 40 | 60 | 80 | 100,
+  duration?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 30 | 40 | 50 | 60 | 70 | 80 | 90 | 100,
   orientation?: "horizontal" | "vertical",
   scrollDirection?: "default" | "reversed",
   stopOnHover?: boolean
@@ -43,9 +43,13 @@ function Marquee({
           duration === 18 && "[--duration:18s]",
           duration === 19 && "[--duration:19s]",
           duration === 20 && "[--duration:20s]",
+          duration === 30 && "[--duration:30s]",
           duration === 40 && "[--duration:40s]",
+          duration === 50 && "[--duration:50s]",
           duration === 60 && "[--duration:60s]",
+          duration === 70 && "[--duration:70s]",
           duration === 80 && "[--duration:80s]",
+          duration === 90 && "[--duration:90s]",
           duration === 100 && "[--duration:100s]",
           orientation === "vertical" && "flex-col",
           className
@@ -82,7 +86,7 @@ function MarqueeLayout({
   return (
     <div
       className={cn(
-        `flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row w-full h-full items-center`,
+        `flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row min-w-full h-full items-center`,
         scrollDirection === "default" && "[animation-direction:reverse]",
         stopOnHover && "group-hover/marquee:[animation-play-state:paused]",
         orientation === "vertical" ? "flex-col animate-marquee-y" : "flex-row animate-marquee",

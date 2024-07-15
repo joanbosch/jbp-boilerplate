@@ -7,6 +7,10 @@ import { getSEOTags } from "@/lib/seo";
 import ReturnButton from "./_components/return-button";
 import ReturnAppName from "./_components/return-app-name";
 import { Suspense } from "react";
+import { Marquee } from "@/components/grid-components/marquee";
+import MarqueeItem from "@/components/marquee-item";
+import { Icons } from "@/components/icons";
+import { Activity, Atom, Bird, Cat } from "lucide-react";
 
 export const metadata = getSEOTags({
   title: `Login | ${config.appName}`,
@@ -21,6 +25,82 @@ export default function AuthenticationPage() {
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
           <div className="absolute inset-0 bg-zinc-900" />
           <ReturnAppName />
+          <section className={`container flex w-full justify-center mb-40`}>
+            <div className="absolute overflow-hidden flex flex-col w-full h-fit top-[30%]">
+              <Marquee duration={50} scrollDirection="reversed" stopOnHover>
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+              </Marquee>
+              <Marquee duration={60}>
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+              </Marquee>
+              <Marquee duration={40} stopOnHover >
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+              </Marquee>
+              <Marquee duration={40} scrollDirection="reversed">
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+                <MarqueeItem icon={Activity} className="bg-gray-200 border w-16" />
+                <MarqueeItem icon={Atom} className="bg-blue-200 border w-16"  />
+                <MarqueeItem icon={Bird} className="bg-green-200 border w-16" />
+                <MarqueeItem icon={Cat} className="bg-yellow-200 border w-16" />
+                <MarqueeItem icon={Icons.google} className="bg-stone-200 border w-16" />
+                <MarqueeItem icon={Icons.gitHub} className="bg-red-200 border w-16" />
+                <MarqueeItem icon={Icons.surkad} className="bg-orange-200 border w-16" />
+                <MarqueeItem icon={Icons.logo} className="bg-purple-200 border w-16" />
+              </Marquee>
+            </div>
+          </section>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
               <p className="text-lg">
