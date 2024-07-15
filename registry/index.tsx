@@ -27,6 +27,11 @@ const ui: Registry = {
     name: "orbit",
     type: "components:ui",
     files: ["registry/components/ui/simple-card.tsx"],
+  },
+  "tweet": {
+    name: "tweet",
+    type: "components:ui",
+    files: ["registry/components/ui/tweet.tsx"],
   }
 };
 
