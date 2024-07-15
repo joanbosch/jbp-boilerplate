@@ -13,6 +13,7 @@ import { Icons } from "@/components/icons";
 import { Marquee } from "@/components/grid-components/marquee";
 import MarqueeItem from "@/components/marquee-item";
 import { SimpleCard, SimpleCardContent } from "@/components/grid-components/simple-card";
+import { OrbitingCirclesDemo } from "@/components/orbit";
 
 export default function Home() {
   return (
@@ -137,6 +138,7 @@ export default function Home() {
           </Marquee>
         </div>
       </section>
+      <OrbitingCirclesDemo />
     </main>
   );
 }

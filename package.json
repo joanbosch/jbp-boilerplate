@@ -32,6 +32,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-hook-form": "^7.52.1",
+    "react-tweet": "^3.2.1",
     "resend": "^3.4.0",
     "sonner": "^1.5.0",
     "stripe": "^16.2.0",
