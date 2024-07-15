@@ -8,9 +8,9 @@ import { getSEOTags } from '@/lib/seo'
 import config from '@/config/config'
 import { cn } from '@/lib/utils'
 import { ChevronRightIcon } from 'lucide-react'
-import Balancer from "react-wrap-balancer"
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { DashboardTableOfContents } from '@/components/toc'
+import { Balancer } from '@/components/grid-components/balancer'
 
 interface DocPageProps {
   params: {
