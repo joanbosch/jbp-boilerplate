@@ -12,8 +12,8 @@ import { BlogPosting, WithContext } from "schema-dts";
 
 import { visit } from "unist-util-visit";
 
-import { rehypeComponent } from "@/lib/rehype-component";
-import { rehypeNpmCommand } from "@/lib/rehype-npm-command";
+import { rehypeComponent } from "./lib/rehype-component";
+import { rehypeNpmCommand } from "./lib/rehype-npm-command";
 
 /** @type {import('contentlayer/source-files').ComputedFields} */
 const computedFields = {

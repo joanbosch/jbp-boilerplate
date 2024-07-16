@@ -4,7 +4,6 @@ import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
 
-import { docsConfig } from '@/config/docs'
 import { getSEOTags } from '@/lib/seo'
 
 import config from '@/config/config'
@@ -16,6 +15,12 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { DashboardTableOfContents } from '@/components/toc'
 
 import { Balancer } from '@/components/grid-components/balancer'
+import { Metadata } from 'next/types'
+import { getTableOfContents } from '@/lib/toc'
+import { Contribute } from '@/components/docs-contribute'
+import { Mdx } from '@/components/mdx-components'
+import { DocPager } from '@/components/docs-pager'
+
 
 interface DocPageProps {
   params: {
@@ -25,7 +30,7 @@ interface DocPageProps {
 
 async function getDocFromParams({ params }: DocPageProps) {
   const slug = params.slug?.join("/") || ""
-  const doc = allDocs.find((doc: any) => doc.slugAsParams === slug)
+  const doc = allDocs.find((doc) => doc.slugAsParams === slug)
 
   if (!doc) {
     return null
@@ -36,25 +41,47 @@ async function getDocFromParams({ params }: DocPageProps) {
 
 export async function generateMetadata({
   params,
-}: DocPageProps): Promise<any> {
+}: DocPageProps): Promise<Metadata> {
   const doc = await getDocFromParams({ params })
-  const md = getSEOTags({
-    title: `${doc?.title} | ${config.appName}`,
-    description: `${doc?.description}`,
-    canonicalUrlRelative: `/docs${params.slug?.join("/") ? `/${params.slug?.join("/")}` : ""}`,
+
+  if (!doc) {
+    return {}
+  }
+
+  const metadata = getSEOTags({
+    title: `${doc.title}`,
+    description: `${doc.description}`,
   });
-  return md;
+
+  return {
+    ...metadata,
+    title: doc.title,
+    description: doc.description,
+    openGraph: {
+      title: doc.title,
+      description: doc.description,
+      type: "article",
+    }
+  }
+}
+
+export async function generateStaticParams(): Promise<
+  DocPageProps["params"][]
+> {
+  return allDocs.map((doc) => ({
+    slug: doc.slugAsParams.split("/"),
+  }))
 }
 
 export default async function Docs({ params }: DocPageProps) {
 
   const doc = await getDocFromParams({ params })
 
-  if (!doc) {
-    notFound()
+  if (!doc || !doc.published) {
+    notFound();
   }
 
-  const DocComponent = dynamic(() => import(`./../../../../content${doc.href}.tsx`))
+  const toc = await getTableOfContents(doc.body.raw);
 
   return (
   <main className="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
@@ -74,16 +101,18 @@ export default async function Docs({ params }: DocPageProps) {
           </p>
         )}
       </div>
-      <div className={`pb-12 pt-8`}>
-        <DocComponent />
-      </div>
+      <div className="pb-12 pt-8">
+          <Mdx code={doc.body.code} />
+        </div>
+        <DocPager doc={doc} />
     </div>
     {doc.toc && (
       <div className="hidden text-sm xl:block">
         <div className="sticky top-16 -mt-10 pt-4">
           <ScrollArea className="pb-10">
             <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-            <DashboardTableOfContents toc={doc.toc} />
+            <DashboardTableOfContents toc={toc} />
+            <Contribute doc={doc} />
             </div>
           </ScrollArea>
         </div>

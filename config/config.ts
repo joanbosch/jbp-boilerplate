@@ -15,8 +15,9 @@ const config = {
     ownerName: "Joan Bosch",
     twitterName: "@joanboschpons",
     twitterLink: "https://twitter.com/joanboschpons",
-    githubLink: "https://github.com/joanbosch"
-
+    githubLink: "https://github.com/joanbosch",
+    githubOwnerName: "joanbosch",
+    githubRepo: "quicklang"
   },
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.

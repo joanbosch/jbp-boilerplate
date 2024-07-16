@@ -32,6 +32,8 @@ export interface ConfigProps {
     twitterName: string;
     twitterLink: string;
     githubLink: string;
+    githubOwnerName: string;
+    githubRepo: string;
   }
   crisp: {
     id?: string;

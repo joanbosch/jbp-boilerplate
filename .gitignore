@@ -87,3 +87,8 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# next.js build output
+.contentlayer
+.react-email
+.turbo

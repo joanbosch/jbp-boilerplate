@@ -1,108 +1,123 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import { useEffect, useMemo, useState } from "react";
 
-import { cn } from "@/lib/utils"
-import { NavTocItem } from "@/types/nav"
-import { useMounted } from "@/hooks/use-mounted"
-import { usePathname } from "next/navigation"
-import Link from "next/link"
+import type { TableOfContents } from "@/lib/toc";
+import { cn } from "@/lib/utils";
+import { useMounted } from "@/lib/use-mounted";
 
 interface TocProps {
-  toc: NavTocItem[]
+  toc: TableOfContents;
 }
 
-export function DashboardTableOfContents({ toc }: TocProps) {
-  const itemIds : string[] = React.useMemo(
-    () => {
-      const ids = toc
-            .flatMap((item) => [item.id, item?.items?.map((item) => item.id)])
+export function TableOfContents({ toc }: TocProps) {
+  const refinedToc = useMemo(() => {
+    if (!toc.items || toc.items.length === 0) {
+      return toc;
+    }
+
+    const [linksInSteps, ...rest] = toc.items;
+
+    if (linksInSteps.items && linksInSteps.items.length > 0) {
+      return {
+        items: [...linksInSteps.items, ...rest],
+      };
+    }
+
+    return toc;
+  }, [toc]);
+
+  const itemIds: string[] = useMemo(
+    () =>
+      refinedToc.items
+        ? refinedToc.items
+            .flatMap((item) => [item.url, item?.items?.map((item) => item.url)])
             .flat()
             .filter(Boolean)
-            .filter((id) => typeof id === "string")
-      return ids
-    }, [toc])
-  const activeHeading = useActiveItem(itemIds)
-  const mounted = useMounted()
+            .map((id) => id?.split("#")[1])
+        : [],
+    [refinedToc],
+  ) as string[];
 
-  if (!toc || !mounted) {
-    return null
+  const activeHeading = useActiveItem(itemIds);
+  const mounted = useMounted();
+
+  if (!toc?.items || !mounted) {
+    return null;
   }
 
   return (
     <div className="space-y-2">
       <p className="font-medium">On This Page</p>
-      <Tree tree={toc} activeItem={activeHeading} />
+      <Tree tree={refinedToc} activeItem={activeHeading} />
     </div>
-  )
+  );
 }
 
-function useActiveItem(itemIds: string[]): string {
-  const [activeId, setActiveId] = React.useState<string | null>(null)
+function useActiveItem(itemIds: string[]): string | null {
+  const [activeId, setActiveId] = useState<string | null>(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setActiveId(entry.target.id)
+            setActiveId(entry.target.id);
           }
-        })
+        });
       },
-      { rootMargin: `0% 0% -80% 0%` }
-    )
+      { rootMargin: `0% 0% -80% 0%` },
+    );
 
-    itemIds.forEach((id) => {
-      const element = document.getElementById(id)
+    itemIds?.forEach((id) => {
+      const element = document.getElementById(id);
       if (element) {
-        observer.observe(element)
+        observer.observe(element);
       }
-    })
+    });
 
     return () => {
       itemIds?.forEach((id) => {
-        const element = document.getElementById(id)
+        const element = document.getElementById(id);
         if (element) {
-          observer.unobserve(element)
+          observer.unobserve(element);
         }
-      })
-    }
-  }, [itemIds])
+      });
+    };
+  }, [itemIds]);
 
-  return activeId as string
+  return activeId;
 }
 
 interface TreeProps {
-  tree: NavTocItem[]
-  level?: number
-  activeItem?: string
+  tree: TableOfContents;
+  level?: number;
+  activeItem?: string | null;
 }
 
 function Tree({ tree, level = 1, activeItem }: TreeProps) {
-  const pathname = usePathname()
-  console.log(pathname)
-  return tree?.length && level < 3 ? (
+  return tree?.items?.length && level < 3 ? (
     <ul className={cn("m-0 list-none", { "pl-4": level !== 1 })}>
-      {tree.map((item, index) => {
+      {tree.items.map((item, index) => {
         return (
           <li key={index} className={cn("mt-0 pt-2")}>
-            <Link
-              href={`#${item.id}`}
+            <a
+              href={item.url}
               className={cn(
                 "inline-block no-underline transition-colors hover:text-foreground",
-                item.id === `${activeItem}`
+                item.url === `#${activeItem}`
                   ? "font-medium text-foreground"
-                  : "text-muted-foreground"
+                  : "text-muted-foreground",
               )}
             >
               {item.title}
-            </Link>
+            </a>
             {item.items?.length ? (
-              <Tree tree={item.items} level={level + 1} activeItem={activeItem} />
+              <Tree tree={item} level={level + 1} activeItem={activeItem} />
             ) : null}
           </li>
-        )
+        );
       })}
     </ul>
-  ) : null
+  ) : null;
 }
