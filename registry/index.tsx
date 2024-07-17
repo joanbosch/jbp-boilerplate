@@ -17,21 +17,6 @@ const ui: Registry = {
     name: "marquee",
     type: "components:ui",
     files: ["registry/components/ui/marquee.tsx"],
-  },
-  "orbit": {
-    name: "orbit",
-    type: "components:ui",
-    files: ["registry/components/ui/orbit.tsx"],
-  },
-  "simple-card": {
-    name: "orbit",
-    type: "components:ui",
-    files: ["registry/components/ui/simple-card.tsx"],
-  },
-  "tweet-card": {
-    name: "tweet-card",
-    type: "components:ui",
-    files: ["registry/components/ui/tweet-card.tsx"],
   }
 };
 
@@ -62,25 +47,7 @@ const example: Registry = {
     component: React.lazy(
       () => import("@/registry/components/example/marquee-demo"),
     ),
-  },
-  "orbit-demo": {
-    name: "orbit-demo",
-    type: "components:example",
-    registryDependencies: ["orbit"],
-    files: ["registry/components/example/orbit-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/orbit-demo"),
-    ),
-  },
-  "simple-card-demo": {
-    name: "simple-card-demo",
-    type: "components:example",
-    registryDependencies: ["simple-card"],
-    files: ["registry/components/example/simple-card-demo.tsx"],
-    component: React.lazy(
-      () => import("@/registry/components/example/simple-card-demo"),
-    ),
-  },
+  }
 };
 export const registry: Registry = {
   ...ui,

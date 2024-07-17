@@ -7,10 +7,10 @@ import { getSEOTags } from "@/lib/seo";
 import ReturnButton from "./_components/return-button";
 import ReturnAppName from "./_components/return-app-name";
 import { Suspense } from "react";
-import { Marquee } from "@/components/grid-components/marquee";
-import MarqueeItem from "@/components/marquee-item";
 import { Icons } from "@/components/icons";
 import { Activity, Atom, Bird, Cat } from "lucide-react";
+import { MarqueeItem } from "@/registry/components/example/marquee-demo";
+import { Marquee } from "@/registry/components/ui/marquee";
 
 export const metadata = getSEOTags({
   title: `Login | ${config.appName}`,

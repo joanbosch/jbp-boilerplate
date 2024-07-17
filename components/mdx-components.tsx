@@ -11,7 +11,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import TweetCard from "@/registry/components/ui/tweet-card";
 
 import { ComponentPreview } from "./component-preview";
 import { ComponentSource } from "./component-source";
@@ -42,7 +41,6 @@ const components = {
   AccordionItem,
   AccordionTrigger,
   Image,
-  Tweet: ({ id }: { id: string }) => <TweetCard id={id} className="mx-auto" />,
   ComponentPreview,
   ComponentSource: (props: any) => <ComponentSource {...props} />,
   ComponentInstallation: (props: any) => <ComponentInstallation {...props} />,
