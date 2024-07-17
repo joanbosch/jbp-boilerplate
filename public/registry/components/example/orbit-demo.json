@@ -1,0 +1,13 @@
+{
+  "name": "orbit-demo",
+  "registryDependencies": [
+    "orbit"
+  ],
+  "files": [
+    {
+      "name": "orbit-demo.tsx",
+      "content": "import React from 'react'\n\nexport default function OrbitDemo() {\n  return (\n    <div>OrbitDemo</div>\n  )\n}\n"
+    }
+  ],
+  "type": "components:example"
+}

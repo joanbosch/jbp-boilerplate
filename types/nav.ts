@@ -17,7 +17,6 @@ export interface NavTocItem {
 }
 
 export interface NavItemWithChildren extends NavItem {
-  toc?: NavTocItem[]
   items: NavItemWithChildren[]
 }
 

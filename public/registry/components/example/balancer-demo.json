@@ -1,0 +1,13 @@
+{
+  "name": "balancer-demo",
+  "registryDependencies": [
+    "balancer"
+  ],
+  "files": [
+    {
+      "name": "balancer-demo.tsx",
+      "content": "import React from 'react'\n\nexport default function BalancerDemo() {\n  return (\n    <div>BalancerDemo</div>\n  )\n}\n"
+    }
+  ],
+  "type": "components:example"
+}

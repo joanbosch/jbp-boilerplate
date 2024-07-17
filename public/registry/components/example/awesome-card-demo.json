@@ -1,0 +1,13 @@
+{
+  "name": "awesome-card-demo",
+  "registryDependencies": [
+    "awesome-card"
+  ],
+  "files": [
+    {
+      "name": "awesome-card-demo.tsx",
+      "content": "import React from 'react'\n\nexport default function AwesomeCardDemo() {\n  return (\n    <div>AwesomeCardDemo</div>\n  )\n}\n"
+    }
+  ],
+  "type": "components:example"
+}

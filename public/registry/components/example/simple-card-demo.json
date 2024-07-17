@@ -1,0 +1,13 @@
+{
+  "name": "simple-card-demo",
+  "registryDependencies": [
+    "simple-card"
+  ],
+  "files": [
+    {
+      "name": "simple-card-demo.tsx",
+      "content": "import React from 'react'\n\nexport default function SimpleCardDemo() {\n  return (\n    <div>SimpleCardDemo</div>\n  )\n}\n"
+    }
+  ],
+  "type": "components:example"
+}

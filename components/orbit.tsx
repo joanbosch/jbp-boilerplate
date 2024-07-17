@@ -1,5 +1,4 @@
-import OrbitingCircles from "./grid-components/orbit";
-
+import OrbitingCircles from "@/registry/components/ui/orbit";
 
 export function OrbitingCirclesDemo() {
   return (

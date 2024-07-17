@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils"
 
-interface AwesomeCardIconProps extends React.HTMLAttributes<HTMLDivElement> {
+interface MarqueeItemProps extends React.HTMLAttributes<HTMLDivElement> {
   icon: React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>> | ((props: React.HTMLAttributes<SVGElement>) => React.SVGProps<SVGSVGElement>)
   strokeWidth?: number
 }
@@ -11,7 +11,7 @@ export default function MarqueeItem({
   className,
   strokeWidth = 1,
   ...props
-}: AwesomeCardIconProps) {
+}: MarqueeItemProps) {
   let Icon = icon as React.ForwardRefExoticComponent<React.SVGProps<SVGSVGElement>>
   return (
     <div className={cn(`flex items-center content-center justify-center p-2 rounded-xl bg-muted aspect-square text-black hover:blur-0 transition-all ease-in-out duration-200`, className)} {...props}>

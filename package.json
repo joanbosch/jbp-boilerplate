@@ -1,11 +1,12 @@
 {
   "name": "jbp-boilerplate",
   "version": "0.1.0",
+  "type": "module",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "contentlayer2 build && pnpm build:registry && next build",
-    "build:registry": "tsx --tsconfig ./tsconfig.scripts.json ./scripts/build-registry.mts && prettier --loglevel silent --write \"registry/**/*.{ts,tsx,mdx}\" --cache",
+    "build:registry": "tsx --tsconfig  ./tsconfig.scripts.json ./scripts/build-registry.ts",
     "build:docs": "contentlayer2 build",
     "start": "next start",
     "lint": "next lint",
@@ -57,9 +58,11 @@
     "zustand": "^4.5.4"
   },
   "devDependencies": {
+    "@shikijs/compat": "^1.1.7",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "esbuild": "0.23.0",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
     "postcss": "^8",
@@ -71,6 +74,8 @@
     "remark-gfm": "^4.0.0",
     "rimraf": "^5.0.7",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.11.0",
+    "typescript": "^5.3.3",
     "unist-builder": "3.0.0",
     "unist-util-visit": "^4.1.2"
   }

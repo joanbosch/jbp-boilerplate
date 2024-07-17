@@ -1,0 +1,94 @@
+[
+  {
+    "name": "awesome-card",
+    "files": [
+      "registry/components/ui/awesome-card.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "awesome-card-demo",
+    "registryDependencies": [
+      "awesome-card"
+    ],
+    "files": [
+      "registry/components/example/awesome-card-demo.tsx"
+    ],
+    "type": "components:example"
+  },
+  {
+    "name": "balancer",
+    "files": [
+      "registry/components/ui/balancer.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "balancer-demo",
+    "registryDependencies": [
+      "balancer"
+    ],
+    "files": [
+      "registry/components/example/balancer-demo.tsx"
+    ],
+    "type": "components:example"
+  },
+  {
+    "name": "marquee",
+    "files": [
+      "registry/components/ui/marquee.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "marquee-demo",
+    "registryDependencies": [
+      "marquee"
+    ],
+    "files": [
+      "registry/components/example/marquee-demo.tsx"
+    ],
+    "type": "components:example"
+  },
+  {
+    "name": "orbit",
+    "files": [
+      "registry/components/ui/orbit.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "orbit",
+    "files": [
+      "registry/components/ui/simple-card.tsx"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "orbit-demo",
+    "registryDependencies": [
+      "orbit"
+    ],
+    "files": [
+      "registry/components/example/orbit-demo.tsx"
+    ],
+    "type": "components:example"
+  },
+  {
+    "name": "simple-card-demo",
+    "registryDependencies": [
+      "simple-card"
+    ],
+    "files": [
+      "registry/components/example/simple-card-demo.tsx"
+    ],
+    "type": "components:example"
+  },
+  {
+    "name": "tweet-card",
+    "files": [
+      "registry/components/ui/tweet-card.tsx"
+    ],
+    "type": "components:ui"
+  }
+]

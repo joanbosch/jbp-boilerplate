@@ -3,6 +3,7 @@ import { createContentlayerPlugin } from "next-contentlayer2";
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  swcMinify: true,
   images: {
     domains: [
       // NextJS <Image> component needs to whitelist domains for src={}

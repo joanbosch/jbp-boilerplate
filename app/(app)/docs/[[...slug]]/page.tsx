@@ -3,23 +3,18 @@ import { notFound } from "next/navigation"
 import { allDocs } from "contentlayer/generated"
 
 import "@/styles/mdx.css"
-
 import { getSEOTags } from '@/lib/seo'
-
-import config from '@/config/config'
 import { cn } from '@/lib/utils'
-
 import { ChevronRightIcon } from 'lucide-react'
 
 import { ScrollArea } from '@/components/ui/scroll-area'
-import { DashboardTableOfContents } from '@/components/toc'
-
-import { Balancer } from '@/components/grid-components/balancer'
+import { TableOfContents } from '@/components/toc'
 import { Metadata } from 'next/types'
 import { getTableOfContents } from '@/lib/toc'
 import { Contribute } from '@/components/docs-contribute'
 import { Mdx } from '@/components/mdx-components'
 import { DocPager } from '@/components/docs-pager'
+import { Balancer } from '@/registry/components/ui/balancer'
 
 
 interface DocPageProps {
@@ -93,7 +88,7 @@ export default async function Docs({ params }: DocPageProps) {
       </div>
       <div className="space-y-2">
         <h1 className={cn("scroll-m-20 text-3xl font-bold tracking-tight")}>
-          {doc.title}
+          <Balancer>{doc.title}</Balancer>
         </h1>
         {doc.description && (
           <p className="text-base text-muted-foreground">
@@ -111,7 +106,7 @@ export default async function Docs({ params }: DocPageProps) {
         <div className="sticky top-16 -mt-10 pt-4">
           <ScrollArea className="pb-10">
             <div className="sticky top-16 -mt-10 h-[calc(100vh-3.5rem)] py-12">
-            <DashboardTableOfContents toc={toc} />
+            <TableOfContents toc={toc} />
             <Contribute doc={doc} />
             </div>
           </ScrollArea>

@@ -28,6 +28,7 @@ export function ComponentPreview({
   const Code = Codes[0]; // first child
 
   const Preview = React.useMemo(() => {
+    console.log(registry[name]);
     const Component = registry[name]?.component;
 
     if (!Component) {

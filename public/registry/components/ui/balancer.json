@@ -1,0 +1,10 @@
+{
+  "name": "balancer",
+  "files": [
+    {
+      "name": "balancer.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\nfunction Balancer({\n  className,\n  children,\n  ...props\n}: React.HTMLAttributes<HTMLDivElement> ) {  \n  return (\n    <div className={cn(`max-w-lg tracking-tight text-balance`)} {...props} >\n      {children}\n    </div>\n  )\n}\n\nexport { Balancer }"
+    }
+  ],
+  "type": "components:ui"
+}

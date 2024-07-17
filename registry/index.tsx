@@ -28,10 +28,10 @@ const ui: Registry = {
     type: "components:ui",
     files: ["registry/components/ui/simple-card.tsx"],
   },
-  "tweet": {
-    name: "tweet",
+  "tweet-card": {
+    name: "tweet-card",
     type: "components:ui",
-    files: ["registry/components/ui/tweet.tsx"],
+    files: ["registry/components/ui/tweet-card.tsx"],
   }
 };
 
@@ -57,7 +57,7 @@ const example: Registry = {
   "marquee-demo": {
     name: "marquee-demo",
     type: "components:example",
-    registryDependencies: ["marquee-demo"],
+    registryDependencies: ["marquee"],
     files: ["registry/components/example/marquee-demo.tsx"],
     component: React.lazy(
       () => import("@/registry/components/example/marquee-demo"),
